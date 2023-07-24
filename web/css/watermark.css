@@ -1,0 +1,39 @@
+.watermark-form {
+  display: flex;
+  justify-content: center;
+}
+
+.upload-picture {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-picture__title {
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+.upload-picture__form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  width: 10rem;
+  height: 10rem;
+  background: rgb(140, 203, 171);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: auto;
+}
+
+.upload-picture__gif {
+  display: none;
+}
+
+.btn-upl {
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+}
