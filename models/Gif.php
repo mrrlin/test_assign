@@ -22,24 +22,27 @@ class Gif extends \yii\db\ActiveRecord
     {
         return [
             [['gifFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'gif'],
+            [['gifPath'], 'string'],
         ];
     }
     public function attributeLabels()
     {
         return [
             'id' => 'ID',
-            'gifFile' => 'gifFile',
+            'gifFile' => 'File',
+            'gifPath' => 'Gif Path',
         ];
     }
+
     public function upload()
     {
-        if ($this->validate()) {
-          // var_dump($this->gifFile); exit;
-            $this->gifFile->saveAs('uploads/test.gif');
-            $this->gifFile = 'uploads/test.gif';
-            return $this->save();
-        } else {
-            return false;
-        }
+      if ($this->validate()) {
+        $filePath = 'uploads/' . $this->gifFile->baseName . '.' . $this->gifFile->extension;
+        // $this->gifFile->saveAs($filePath);
+        $this->gifPath = $filePath;
+        return $this->save(false);
+      } else {
+          return false;
+      }
     }
 }

@@ -59,22 +59,7 @@ class WatermarkController extends \yii\web\Controller
             return $this->render('watermark', ['model' => $model, ]);
         }
       }
-      
-      //   $imageFile = UploadedFile::getInstance($model, 'gifFile');
-      //   var_dump($gifFile);
-      //   exit;
-      //   $parame = \Yii::$app->request->post('gifFile');
-      // }
-    
-      // exit();
-
-      // if (Yii::$app->request->isPost) {
-      //     $model->gifFile = UploadedFile::getInstance($model, 'gifFile');
-
-
-      // }
 
       return $this->render('watermark', ['model' => $model, ]);
-    
   }
 }
